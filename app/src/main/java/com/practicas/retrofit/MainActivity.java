@@ -1,6 +1,7 @@
 package com.practicas.retrofit;
 
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
                         for (Post post: postsList) {
                             String content = "";
-                            content += "title: " + post.getTitle()+"\n";
-                            content += "description: " + post.getDescription() + "\n";
-                            content += "image_url::" + post.getUrl_image() + "\n\n";
+                            content += "Título: " + post.getTitle()+"\n";
+                            content += "Descripción: " + post.getDescription() + "\n";
+                            content += "Url de la imagen: " + post.getUrl_image() + "\n\n\n";
+                            Linkify.addLinks(mJsonTxtView, Linkify.EMAIL_ADDRESSES |Linkify.WEB_URLS);
                             mJsonTxtView.append(content);
                         }
             }

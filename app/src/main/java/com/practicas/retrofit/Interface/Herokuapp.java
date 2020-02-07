@@ -8,7 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface Herokuapp {
-    @GET ("posts")
+    @GET ("post")
     Call<List<Post>> getPosts();
 }
 
